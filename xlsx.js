@@ -15009,7 +15009,7 @@ if(wb.Workbook.WBProps.CodeName) { workbookPr.codeName = wb.Workbook.WBProps.Cod
 			if(n.Sheet != null) d.localSheetId = ""+n.Sheet;
 			if(n.Hidden) d.hidden = "1";
 			if(!n.Ref) return;
-			o[o.length] = writextag('definedName', String(n.Ref).replace(/</g, "&lt;").replace(/>/g, "&gt;"), d);
+			o[o.length] = writextag('definedName', escapexml(n.Ref), d);
 		});
 		o[o.length] = "</definedNames>";
 	}
